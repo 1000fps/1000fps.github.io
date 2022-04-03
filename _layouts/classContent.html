@@ -1,0 +1,139 @@
+---
+layout: default
+---
+
+<nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        {{ page.course }}
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        {% assign urlsections = page.url | split: "/" %}
+        
+        {% if urlsections[-2] == "" %}
+          {% assign indexurl = "#" %}
+        {%else%}
+          {% assign indexpath = urlsections[-2] | replace: "-", "_" | replace: "//", "" %}
+          {% assign indexurl = site.baseurl | append: indexpath | append: ".html" %}
+        {%endif%}
+        
+        <li> <span class="mdi mdi-home"></span> <a href="{{indexurl}}"> Index </a></li>
+{% assign courseContents = site.courses | where: "course", page.course %}
+
+{% assign itemsBySections =  courseContents
+    | sort: "sectionNo"
+    | group_by:"section"
+%}
+
+{% for sectionItems in itemsBySections %}
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">{{sectionItems.name}}</a>
+
+            {% assign lectures = sectionItems.items
+            | sort: "lectureOrder"
+            | group_by: "lecture"%}
+
+            <div class="mission__content">
+                <ul>
+                    {% for lecture in lectures %}
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        {{ lecture.name }}
+                        <ul class="classContent closed">
+                            {% assign contents = lecture.items
+                            | sort: "itemOrder" %}
+                            {% for content in contents %}
+                            {% if content.type == "Slides" %}
+                            <li>
+                                <span class="mdi mdi-presentation"></span>
+                                <a href="{{content.url}}">{{ content.title }}</a>
+                            </li>
+                            {% elsif content.type == "Handout" %}
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="{{content.url}}">{{ content.title}}</a>
+                            </li>
+                            {% elsif content.type == "Tutorial" %}
+                            <li>
+                                <span class="mdi mdi-file-document-outline"></span>
+                                <a href="{{content.url}}">{{ content.title}}</a>
+                            </li>
+                            {% elsif content.type == "Video" %}
+                            <li>
+                                <span class="mdi mdi-youtube"></span>
+                                
+                                <a href="{{content.url}}">{{ content.title}}</a>
+                            </li>
+                            {% elsif content.type == "Tarefas" %}
+                            <li>
+                                <span class="mdi mdi-map-marker-question-outline"></span>
+                                <a href="{{content.url}}">{{ content.title}}</a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </li>
+{% endfor %}
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    {{ content }}
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>

@@ -1,0 +1,80 @@
+<header>
+    <ul>
+        {% if page.layout == "classContent" %}
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        {% endif %}
+        <li>
+            <a href="{{site.baseurl}}index.html" class=link__bolder>
+                RV & Jogos
+            </a>
+        </li>
+        <li>
+            <a href="{{site.baseurl}}projetos/index.html">
+                Projetos
+            </a>
+        </li>
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            {% assign courses = site.pages |
+            where_exp: "page", "page.coursepath" %}
+
+            {% assign courses = courses | sort: "title"%}
+            {%for course in courses %}
+            <li>
+                <a href="{{course.url}}">
+                    {{ course.course }}
+                </a>
+            </li>
+        {%endfor%}
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>

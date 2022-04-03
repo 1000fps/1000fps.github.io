@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include head.html %}
+    </head>
+    <body
+        {% if page.layout == "classContent" %}
+            class="closed"
+        {% endif %}
+        >
+        {% include header.html %}
+        {{ content }}
+        {% include footer.html %}
+    </body>
+</html>
