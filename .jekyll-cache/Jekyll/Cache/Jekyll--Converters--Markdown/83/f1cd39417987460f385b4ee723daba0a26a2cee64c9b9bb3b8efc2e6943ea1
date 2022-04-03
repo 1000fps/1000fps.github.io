@@ -1,0 +1,117 @@
+I"<h1 id="listas">Listas</h1>
+
+<p>Até agora, em nossos programas só conseguimos salvar uma única informação em uma variável, e isso já resolve muitos dos desafios que encontramos.</p>
+
+<p>Contudo temos ainda diversos problemas que para ser resolvidos é mais interessante que seja possível guardar várias informações na mesma referência (variável)</p>
+
+<p>Para isso utilizamos as listas (lists), que é uma estrutura de dados que podemos guardar mais de um dado em uma variável só.</p>
+
+<hr />
+
+<h2 id="criando-listas">Criando listas</h2>
+
+<p>Veja só como criar uma lista em python:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">minhaLista</span> <span class="o">=</span> <span class="p">[</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Tente executar o código acima, o que acontece?</p>
+</blockquote>
+
+<p>Perceba, que cada um dos elementos da lista é separado por uma virgula.</p>
+
+<hr />
+
+<h2 id="acessando-elementos">Acessando elementos</h2>
+
+<p>Podemos acessar esses elementos individualmente utilizando o índice (ou index em inglês) desse elemento. Para isso abrimos colchete ( [ ) colocamos o número do índice que queremos e fechamos colchete ( ] ). Veja:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Adicione o código acime ao final da execução do código anterior. Aconteceu o que você havia previsto? Ou aconteceu alguma coisa diferente?</p>
+</blockquote>
+
+<p>Os Índices em programação podem ser confusos a primeira vista, mas com experiência vamos acostumando, no caso do script acima, estamos tentando acessar o <strong>elemento de índice 1</strong> de nossa lista, que na realidade é o segundo elemento.</p>
+
+<p>Isso ocorre por que os índices começam no número 0.</p>
+
+<p>Então no exemplo de minhaLista o <strong>elemento de índice 0</strong> é o caractere <strong>a</strong>, o <strong>elemento de índice 1</strong> é o caractere <strong>b</strong>, e assim por diante.</p>
+
+<h2 id="modificando-elementos">Modificando elementos</h2>
+
+<p>Para modificar elementos de uma lista, podemos acessá-lo como acabamos de ver, e atribuir simplesmente atribuir um novo valor a ele.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">minhaLista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">"d"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="adicionando-novos-elementos">Adicionando novos elementos</h2>
+
+<p>Uma das facilidades das listas de python é poder anexar novos elementos ao final da lista, para isso utilizamos a função append de listas</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">minhaLista</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"e"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="modificando-elementos-1">Modificando elementos</h2>
+
+<p>Para modificar elementos de uma lista, podemos acessá-lo como acabamos de ver, e atribuir simplesmente atribuir um novo valor a ele.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">minhaLista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">"d"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<hr />
+
+<h1 id="código-completo">Código completo</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">minhaLista</span> <span class="o">=</span> <span class="p">[</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">minhaLista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">"d"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">)</span>
+
+<span class="n">minhaLista</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"e"</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">minhaLista</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<hr />
+
+<h1 id="desafio">Desafio!</h1>
+
+<p>Utilizando tudo que você aprendeu até agora, você consegue criar um script que
+percorra uma lista qualquer?</p>
+
+<h1 id="exercícios">Exercícios.</h1>
+
+<ol>
+  <li>Crie um script que mostre o maior número de uma lista.</li>
+  <li>Crie um script que faça a soma de todos os números de uma lista.</li>
+  <li>Crie um script que compare duas listas, e fale se elas são idênticas ou
+não.</li>
+  <li>Crie um script que conte mostre para o usuário os elementos que são iguais
+entre duas listas.</li>
+  <li>Crie um programa de cadastro de nomes, o programa deverá continuar
+cadastrando nomes até o usuário confirmar que não quer mais cadastrar nomes.
+Depois disso o programa deverá mostrar todos os nomes cadastrados, um por
+linha.</li>
+</ol>
+
+:ET

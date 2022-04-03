@@ -1,0 +1,118 @@
+I"1<h1 id="instalação-do-flutter">Instalação do Flutter</h1>
+
+<h2 id="objetivos-de-aprendizado">Objetivos de Aprendizado</h2>
+
+<p>Ao final deste roteiro você será capaz de configurar seu ambiente de trabalho
+para acompanhar as aulas, e desenvolver suas aplicações.</p>
+
+<h1 id="instalação">Instalação</h1>
+
+<p>Para começar a instalação acesse o site de instalação do flutter
+<a href="https://docs.flutter.dev/get-started/install">aqui</a></p>
+
+<p>E selecione o sistema operacional correspondente ao seu ambiente. – Vamos
+seguir com a instalação no Windows –</p>
+
+<p>Faça o download do <strong><em>SDK</em></strong> – no momento da execução desse roteiro é a versão 2.10.4</p>
+
+<p>Feito isso, crie uma pasta na raiz do disco, ou em qualquer lugar que achar
+melhor, uma pasta que deverá conter o SDK do flutter.</p>
+
+<blockquote>
+  <p>C:\fluter-sdk</p>
+</blockquote>
+
+<p>Criada essa pasta podemos extrair o arquivo que baixamos para ela.</p>
+
+<p><img src="img/001.png" alt="" /></p>
+
+<hr />
+
+<p>Feito isso precisamos adicionar a pasta de binários a nossa variável de
+ambiente. Para isso execute o seguinte código no cmd:</p>
+
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="kd">PATH</span><span class="o">=</span><span class="nv">%PATH%</span><span class="o">;</span><span class="kd">C</span>:\pasta\do\seu\flutter\bin
+</code></pre></div></div>
+
+<p><img src="img/002.png" alt="" /></p>
+
+<p class="aviso">Esse comando fará essa alteração apenas temporariamente. Fazer essa alteração
+definitivamente siga as instruções <a href="AlterandoOPath.md">neste arquivo</a></p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Salve no seu repositório uma captura de tela do terminal depois de 
+executado o comando.</li>
+</ul>
+
+<p>Feito isso podemos rodar o <code class="highlighter-rouge">flutter doctor</code> que fará algumas verificações em
+nosso ambiente para saber se está tudo certo para começarmos o desenvolvimento.</p>
+
+<p><img src="img/003.png" alt="" /></p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Rode o comando flutter doctor e salve em seu repositório  uma captura do terminal depois de
+executado.</li>
+</ul>
+
+<p>Vamos corrigir agora cada um dos problemas indicados pelo <code class="highlighter-rouge">flutter doctor</code></p>
+
+<hr />
+
+<h2 id="dev-android">Dev. Android.</h2>
+
+<p>Por mais que possamos utilizar qualquer editor para escrever aplicações flutter,
+precisamos de uma instalação completa do Android Studio para que o flutter
+funcione corretamente.</p>
+
+<ol>
+  <li>Baixe e faça a instalação do Android Studio.</li>
+</ol>
+
+<p><img src="img/004.png" alt="" /></p>
+
+<ol>
+  <li>Execute o android studio uma primeira vez para que seja feita a configuração
+necessária, <strong>Android SDK, Android SDK Command-line Tools, e Android SDK
+Build-Tools</strong></li>
+</ol>
+
+<p><img src="img/005.png" alt="" /></p>
+
+<p><img src="img/006.png" alt="" /></p>
+
+<p><img src="img/007.png" alt="" /></p>
+
+<ol>
+  <li>Execute novamente o <code class="highlighter-rouge">flutter doctor</code>para verificar se tudo foi feito de
+maneira correta.</li>
+</ol>
+
+<p>Agora precisamos configurar um emulador para trabalhar com o flutter. No android
+studio procure pelo <strong>Android Virtual Device Manager</strong> e com ele aberto
+selecione, <strong>Create Virtual Device</strong>. E siga as imagens abaixo:</p>
+
+<p><img src="img/008.png" alt="" />
+<img src="img/009.png" alt="" />
+<img src="img/010.png" alt="" />
+<img src="img/011.png" alt="" />
+<img src="img/013.png" alt="" />
+<img src="img/014.png" alt="" />
+<img src="img/015.png" alt="" />
+<img src="img/016.png" alt="" /></p>
+
+<p>Execute o dispositivo que você acabou de criar, um dispositivo android deve
+abrir na home padrão.</p>
+
+<p><img src="img/017.png" alt="" /></p>
+
+<p>Por fim precisamos aceitar algumas licenças, execute então o comando:</p>
+
+<pre><code class="language-cmd">flutter doctor --android-licenses
+</code></pre>
+
+<p>Revise os termos e os aceite.</p>
+
+<p>Por fim execute o <code class="highlighter-rouge">flutter doctor</code> novamente para verificarmos que está tudo
+pronto para começarmos o desenvolvimento.</p>
+
+:ET
