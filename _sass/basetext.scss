@@ -22,10 +22,32 @@ h4 {font-size:18px;}
 h5 {font-size:16px;}
 h6 {font-size:14px;}
 
+p, li{
+    padding:0.5em 0;
+    line-height:115%;
+}
+
+blockquote{
+    margin:0.5em 2em; 
+    border-left:$vermelho solid 2pt;
+    padding-left:0.5em;
+    p{padding:0;}
+}
+
 .lectureContent ul li::before{
     content: "\F0BAD";
     font-family: "Material Design Icons";
     margin-right:1em;
+}
+
+.lectureContent ol{
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
+    li{
+        padding:0.2em;
+            
+    }
+
 }
 
 .highlighter-rouge{
@@ -36,6 +58,15 @@ h6 {font-size:14px;}
 
 pre.highlight{
     padding:0.5em;
+}
+
+code.highlighter-rouge{
+    padding:0 1ch;
+    margin:0;
+    border:none;
+    border-radius:2px;
+    background: $vermelho;
+    color:$branco;
 }
 
 div[data-filename]::before{

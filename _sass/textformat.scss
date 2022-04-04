@@ -28,6 +28,11 @@ h6 {font-size:14px;}
     margin-right:1em;
 }
 
+.lectureContent ol{
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
+}
+
 .highlighter-rouge{
     margin:1em;
     padding:0.5em;

@@ -89,7 +89,9 @@ Uma das facilidades das listas de python é poder anexar novos elementos ao fina
 da lista, para isso utilizamos a função append de listas
 
 
-```python minhaLista.append("e") print(minhaLista) ```
+```python 
+minhaLista.append("e") print(minhaLista)
+```
 
 
 ---
@@ -99,7 +101,9 @@ da lista, para isso utilizamos a função append de listas
 Para modificar elementos de uma lista, podemos acessá-lo como acabamos de ver, e
 atribuir simplesmente atribuir um novo valor a ele. 
 
-```python minhaLista[1] = "d" print(minhaLista) ```
+```python 
+minhaLista[1] = "d" print(minhaLista) 
+```
 
 ---
 
@@ -108,7 +112,8 @@ atribuir simplesmente atribuir um novo valor a ele.
 
 # Código completo 
 
-```python minhaLista = ["a", "b", "c"]
+```python 
+minhaLista = ["a", "b", "c"]
 
 print(minhaLista)
 
@@ -120,7 +125,8 @@ print(minhaLista)
 
 minhaLista.append("e")
 
-print(minhaLista) ```
+print(minhaLista)
+```
 
 ---
 
