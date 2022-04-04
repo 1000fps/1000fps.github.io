@@ -4,7 +4,7 @@ title: "Instalação"
 course: "Mobile I"
 sectionNo: 0
 section: "Aulas"
-lectureOrder: "0"
+lectureOrder: "1"
 lecture: "Flutter"
 itemOrder: "0"
 type: "Handout"
