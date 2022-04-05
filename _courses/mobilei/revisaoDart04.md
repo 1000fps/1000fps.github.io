@@ -1,12 +1,12 @@
 ---
 layout: classContent
-title: "Orentação a Objetos"
+title: "Orientação a Objetos"
 course: "Mobile I"
 sectionNo: 0
 section: "Aulas"
 lectureOrder: "0"
 lecture: "Dart"
-itemOrder: "0"
+itemOrder: "3"
 type: "Handout"
 ---
 
