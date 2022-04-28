@@ -125,7 +125,7 @@ imagem locais em nossa aplicação.
 ```dart
 Image.network("https://placekitten.com/g/200/300");
 ```
-![](image.png)
+![](img/image.png)
 
 # Container
 
@@ -157,7 +157,7 @@ Container(color: Colors.red,
           height: 100.0);
 ```
 
-![](container02.png)
+![](img/container02.png)
 
 Para verificar o exemplo acima o container não pode ser o elemento raiz da nossa
 aplicação!
@@ -202,4 +202,4 @@ Criamos uma linha com 2 elementos
 Utilizando os widgets que vimos hoje crie um aplicativo que tenha o seguinte
 layout:
 
-![](layout.png)
+![](img/layout.png)
