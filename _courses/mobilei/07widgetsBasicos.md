@@ -1,6 +1,6 @@
 ---
 layout: classContent
-title: "Primeiro projeto minimo"
+title: "Widgets Básicos"
 course: "Mobile I"
 sectionNo: 0
 section: "Aulas"
@@ -104,3 +104,102 @@ Text("Meu texto",
      );
 ```
 
+# Center
+
+Este widget é utilizado para centralizar outros componentes, que serão seus
+"filhos" (child)
+
+```dart
+var OutroWidget = Text("Outro Widget"); //Pode ser QUALQUER outro widget
+Center(child: OutroWidget);
+```
+
+![](img/centerWidget01.png)
+
+# Image
+
+Esse elemento mostra uma imagem em seu app, neste momento vamos apenas usar
+imagens que estejam carregadas na internet, mas a frente vamos aprender inserir
+imagem locais em nossa aplicação. 
+
+```dart
+Image.network("https://placekitten.com/g/200/300");
+```
+![](image.png)
+
+# Container
+
+Esse é um dos elementos básicos que começamos a trabalhar com posicionamento,
+"pintura" e tamanho. Ele tem um construtor que pode receber diversos parametros
+mas vamos começar pelos mais básicos. 
+
+```dart
+Container(color: Colors.red);
+```
+
+Acima criamos um container apenas com a cor vermelha
+
+![](img/containerWidget01.png)
+
+Como de prache, podemos colocar um filho nele
+
+```dart
+Container(color: Colors.red,
+          child: Text("Widget Filho", textDirection:TextDirection.ltr));
+```
+
+Podemos também definir altura e largura do nosso container
+
+```dart
+Container(color: Colors.red,
+          child: Text("Widget Filho", textDirection:TextDirection.ltr)
+          width: 50.0,
+          height: 100.0);
+```
+
+![](container02.png)
+
+Para verificar o exemplo acima o container não pode ser o elemento raiz da nossa
+aplicação!
+
+# Column e Row
+
+Esses widgets organizam diversos filhos dentro da tela, em colunas (column) ou
+linhas (row)
+
+```dart
+var Widget1 = Text("Widget 1", textDirection: TextDirection.ltr);
+var Widget2 = Text("Widget 2", textDirection: TextDirection.ltr);
+Column(children: 
+        Widget>[
+           Widget1,
+           Widget2,
+        ]);
+```
+
+Criamos uma coluna com dois elementos 
+
+![](img/column.png)
+
+
+```dart
+var Widget1 = Text("Widget 1", textDirection: TextDirection.ltr);
+var Widget2 = Text("Widget 2", textDirection: TextDirection.ltr);
+Row(children: 
+        Widget>[
+           Widget1,
+           Widget2,
+        ],
+        textDirection: TextDirection.ltr);
+```
+
+Criamos uma linha com 2 elementos
+
+![](img/row.png)
+
+# Desafio!
+
+Utilizando os widgets que vimos hoje crie um aplicativo que tenha o seguinte
+layout:
+
+![](layout.png)
