@@ -1,12 +1,12 @@
 ---
 layout: classContent
-title: "Listas"
+title: "07 - Listas"
 course: "PeA"
 sectionNo: 0
 section: "Aulas"
 lectureOrder: "0"
-lecture: "Variáveis Complexas"
-itemOrder: "0"
+lecture: "Python"
+itemOrder: "6"
 type: "Handout"
 ---
 
