@@ -180,16 +180,5 @@ else:
 o uso do elif é bastante parecido com o do if, com a diferença que ele
 "encadeia" as verificações.
 
-imagine que o código fosse como abaixo:
-
-```python
-if (horaDoDia < 11) : 
-    print("Cardápio café")
-
-if (horaDoDia < 16) : 
-    print("Cardápio almoço")
-
-else:
-    print("Cardapio jantar")
-```
+E se a primeira condição for verdadeira as outras nem são testadas. 
 
