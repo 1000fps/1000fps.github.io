@@ -15,7 +15,7 @@ type: "Handout"
 
 ## Objetivos de Aprendizado
 
-Ao final deste roteiro você será capaz de criar uma apliação minima em flutter,
+Ao final deste roteiro você será capaz de criar uma aplicação minima em flutter,
 e entender os primeiros conceitos da construção de layout dele. 
 
 
@@ -23,7 +23,7 @@ e entender os primeiros conceitos da construção de layout dele.
 
 Vamos começar um projeto novo com a ferramenta de linha de comando do flutter,
 com a pasta em nosso **PATH** podemos criar um novo projeto com o comando
-asseguir:
+a seguir:
 
 ---
 
@@ -56,10 +56,10 @@ Teremos uma estrutura que deve ser algo como abaixo:
 
 Dentro da pasta `lib`, temos um arquivo chamado `main.dart`. 
 
-Abra esse arquivo e apague todo seu conteúdo, pois iremos reescreve-lo aos
+Abra esse arquivo e apague todo seu conteúdo, pois iremos reescrevê-lo aos
 poucos para que possamos entender o que está acontecendo.
 
-vamos começar com a primeira linha
+Vamos começar com a primeira linha
 
 {:data-filename="main.dart"}
 ```dart
@@ -67,16 +67,16 @@ import "package:flutter/widgets.dart"
 ```
 
 Quando utilizamos o `import` no começo de nosso arquivo, estamos falando para o
-"complilador" que queremos utilizar o conteúdo desste pacote em nosso código.
+"compilador" que queremos utilizar o conteúdo deste pacote em nosso código.
 
 Nesse caso estamos indicando que precisamos dos widgets básicos que o flutter
-fornece para utilizar em nosso codigo. 
+fornece para utilizar em nosso código. 
 
 Para isso temos ainda outras duas opções: 
 
 `package:flutter/material.dart`, que irá fornecer widgets bastante comuns que
-utlizamos quando estamos fazendo aplicaçÕes android. Material, vem de **Material
-Design** que é o padrão de design estabelecido pelo Google. Você pode consutá-lo
+utilizamos quando estamos fazendo aplicações Android. Material, vem de **Material
+Design** que é o padrão de design estabelecido pelo Google. Você pode consultá-lo
 no site oficial [material.io](https://material.io/design).
 
 A outra opção que temos é a `packages:flutter/cupertino.dart` em que temos
@@ -108,7 +108,7 @@ Bom vamos então criar um novo widget para ser a raiz do nosso programa, para
 isso é preciso criar uma classe, que herde de algum outro widget, vamos começar
 pala `StatelessWidget`, Utilizamos esta classe base quando precisamos criar
 elementos que não serão atualizados em "tempo de execução", isso significa que
-ele só depende das condiçÕes iniciais para sua construção e não será atualizado,
+ele só depende das condições iniciais para sua construção e não será atualizado,
 ou será atualizado muito pouco depois disso. 
 
 
@@ -126,7 +126,7 @@ class PrimeiroElementos extends StatelessWidget{
 ```
 
 Com o código acima demos o primeiro passo para construir um widget nosso.
-Precisamos agora definir um contrutor para nossa classe, e implementar o metodo
+Precisamos agora definir um construtor para nossa classe, e implementar o método
 build. 
 
 {:data-filename="main.dart"}
@@ -144,12 +144,12 @@ class PrimeiroElementos extends StatelessWidget{
 }
 ```
 
-Agora definimos o contrutor de nossa classe PrimeiroElemento, vamos rever
+Agora definimos o construtor de nossa classe PrimeiroElemento, vamos rever
 algumas coisas dessa linha. 
 
 Temos a seguinte construção `{Key? key}`, essa é a forma que o DART/FLUTTER usa
-para a utilização de **parametros nomeados**, neste caso, estamos criando um
-parametro de nome key, e que o tipo de Key?, a interrogação indicando que pode
+para a utilização de **parâmetros nomeados**, neste caso, estamos criando um
+parâmetro de nome key, e que o tipo de Key?, a interrogação indicando que pode
 conter um valor nulo. 
 
 Um outro exemplo seria `{String titulo}` nesse caso estamos criando um parâmetro
@@ -157,9 +157,9 @@ nomeado titulo, com o tipo String.
 
 Outra parte que precisamos tomar atenção é a `: super(key : key)`. Isso está
 chamando o construtor da classe pai, no caso `StatelessWidget`, e passamos por
-parâmetro a `key` qye foi recebida como parametro nomeado do nosso contrutor. 
+parâmetro a `key` que foi recebida como parâmetro nomeado do nosso construtor. 
 
-Agora vamos implementar o metodo build.
+Agora vamos implementar o método build.
 
 
 {:data-filename="main.dart"}
@@ -182,7 +182,7 @@ class PrimeiroElementos extends StatelessWidget{
 }
 ```
 
-Para finalizar trocamos o `/*TODO*/` em `runApp` para o contrutor da classe que
+Para finalizar trocamos o `/*TODO*/` em `runApp` para o construtor da classe que
 acabamos de criar. 
 
 
@@ -264,11 +264,11 @@ class PrimeiroElementos extends StatelessWidget{
 Agora inserimos um elemento de texto a nossa aplicação, e o definimos como filho
 do Center que estávamos usando antes. 
 
-No terminal que estamos com o flutter run rodando, precione r minusculo, para
+No terminal que estamos com o flutter run rodando, pressione r minusculo, para
 atualizar a sua aplicação. 
 
 ![Emulador e codigo com o texto](img/06_texto.png)
 
-Na proxima aula, iremos ver com calma os widgets mais básicos do flutter.
+Na próxima aula, iremos ver com calma os widgets mais básicos do flutter.
 
 
