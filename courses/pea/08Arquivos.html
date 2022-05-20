@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/monokai.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+    integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>
+    08 - Arquivos
+</title>
+</head>
+
+    </head>
+    <body
+        
+            class="closed"
+        
+        >
+        <header>
+    <ul>
+        
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        
+        <li>
+            <a href="/index.html" class=link__bolder>
+                1000FPS | Edu
+            </a>
+        </li>
+<!--        <li>
+            <a href="/posts/index.html">
+                Posts
+            </a>
+</li>-->
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            
+
+            
+            
+            <li>
+                <a href="/mobilei.html">
+                    Mobile I
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pea.html">
+                    PeA
+                </a>
+            </li>
+        
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>
+
+        <nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        PeA
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        
+        
+        
+        
+        <li> <span class="mdi mdi-home"></span> <a href="/pea.html"> Index </a></li>
+
+
+
+
+
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">Aulas</a>
+
+            
+
+            <div class="mission__content">
+                <ul>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Python
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/00introducao.html">01 - Introdução</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/01primeirosPassos.html">02 - Primeiros Passos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/02variaveis.html">03 - Variáveis</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/03condicionais.html">04 - Condicionais</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/04logicos.html">05 - Op. Lógicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/06listas.html">07 - Listas</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/08Arquivos.html">08 - Arquivos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    <h1>08 - Arquivos</h1>
+    <h3>PeA | Python</h3>
+    <hr>
+    <p>Até agora, todos os nossos programas foram efêmeros, ou seja, não conseguiamos
+salvar dados em disco ou mesmo carregar esses dados, vamos fazer isso nesta
+aula.</p>
+
+<h1 id="arquivo-txt">Arquivo txt</h1>
+
+<p>Esse é o jeito mais simples de se salvar um arquivo, para isso utilizaremos duas
+funções nativas do python, o <code class="highlighter-rouge">open</code> para abrir os arquivos e o <code class="highlighter-rouge">close</code> para
+fechar os arquivo.</p>
+
+<p>Como exemplo vamos fazer um cadastro simples de usuários.</p>
+
+<p>A parte que já conhecemos:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">novoUsuario</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">while</span><span class="p">(</span><span class="n">novoUsuario</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Digite seu nome</span><span class="se">\n</span><span class="s">_"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Nome do usuário: "</span> <span class="o">+</span> <span class="n">nome</span><span class="p">)</span>
+    <span class="n">op</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Deseja cadastrar outro usuário (s/N)
+    if (op != "</span><span class="n">s</span><span class="s">"):
+        novoUsuario = False
+</span></code></pre></div></div>
+
+<p>Qual que é o problema com esse código? Ué, simples, toda vez que inserimos um
+novo nome de usuário, estamos trocando o conteúdo da variável nome, e o que
+estava lá antes, é perdido.</p>
+
+<p>Para salvar em arquivo isso, vamos adicionar só mais algumas linhas em nosso
+código.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">novoUsuario</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">while</span><span class="p">(</span><span class="n">novoUsuario</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Digite seu nome</span><span class="se">\n</span><span class="s">_"</span><span class="p">)</span>
+    <span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">"nomes.txt"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">)</span>
+    <span class="n">arquivo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">nome</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+    <span class="n">arquivo</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Nome do usuário: "</span> <span class="o">+</span> <span class="n">nome</span><span class="p">)</span>
+    <span class="n">op</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Deseja cadastrar outro usuário (s/N)
+    if (op != "</span><span class="n">s</span><span class="s">"):
+        novoUsuario = False
+</span></code></pre></div></div>
+
+<p>No codigo acima estamos abrindo um arquivo <code class="highlighter-rouge">nomes.txt</code>, no mode de adição de
+dados <code class="highlighter-rouge">a</code>, escrevemos o nome do usuárop que acabamos de cadastrar com o
+<code class="highlighter-rouge">arquivo.write(nome + "\n")</code>, e por fim fechamos o arquivo com o
+<code class="highlighter-rouge">arquivo.close</code>. É de extrema importância que fechemos o arquivo, logo depois da
+operação que fizermos com ele.</p>
+
+<p>Depois de executarmos o código acima e inserir alguns usuários, abra o arquivo
+nomes.txt que foi criado no mesmo lugar que o script estiver.</p>
+
+<p><img src="img/800.png" alt="" /></p>
+
+<p><img src="img/801.png" alt="" /></p>
+
+<p>E utilizando o modo de adição (a) no open, toda vez que rodarmos esse código
+adicionaremos mais uma linha de usuário ao arquivo.</p>
+
+<p>Vamos “encapsular” esse script em uma chamada de função.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cadastraUsuario</span><span class="p">():</span>
+    <span class="n">novoUsuario</span> <span class="o">=</span> <span class="bp">True</span>
+    
+    <span class="k">while</span><span class="p">(</span><span class="n">novoUsuario</span><span class="p">):</span>
+        <span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Digite seu nome</span><span class="se">\n</span><span class="s">_"</span><span class="p">)</span>
+        <span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">"nomes.txt"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">)</span>
+        <span class="n">arquivo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">nome</span><span class="o">+</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+        <span class="n">arquivo</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Nome do usuário: "</span> <span class="o">+</span> <span class="n">nome</span><span class="p">)</span>
+        <span class="n">op</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Deseja cadastrar outro usuário (s/N)"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">op</span> <span class="o">!=</span> <span class="s">"s"</span><span class="p">):</span>
+            <span class="n">novoUsuario</span> <span class="o">=</span> <span class="bp">False</span>
+</code></pre></div></div>
+
+<p>e vamos criar uma nova função agora para ler esse aquivo, e imprimir todos os
+nomes cadastrados.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">leArquivoUsuarios</span><span class="p">():</span>
+    <span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">"nomes.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span>
+    <span class="n">listaDeNomes</span> <span class="o">=</span> <span class="n">arquivo</span><span class="p">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">arquivo</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">nome</span> <span class="ow">in</span> <span class="n">listaDeNomes</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Nesse código acima temos que abrir o arquivo em modo leitura(read - r),
+utilizamos o comando <code class="highlighter-rouge">readlines()</code> que irá nos retornar uma lista com cada uma
+das linhas do nosso arquivo.</p>
+
+<p>E opa! Tem uma estrutura nova que ainda não tinhamos visto!!!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">nome</span> <span class="ow">in</span> <span class="n">listaDeNomes</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Essa é a instrução for-each do python, em portugues lemos como para cada, então o
+código acima leriamos:</p>
+
+<blockquote>
+  <p>Para cada nome na lista de nomes, imprima o nome</p>
+</blockquote>
+
+<p>E ele ira executar o código de seu bloco para cada um dos elementos de uma
+lista.</p>
+
+<p>Veja como ficou a saida do nosso programa, quando chamamos a função
+<code class="highlighter-rouge">leArquivosUsuarios()</code></p>
+
+<p><img src="img/802.png" alt="" /></p>
+
+
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>
+
+        <footer>
+	<p>
+	</p>
+</footer>
+
+    </body>
+</html>

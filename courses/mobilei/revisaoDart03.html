@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/monokai.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+    integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>
+    Loops
+</title>
+</head>
+
+    </head>
+    <body
+        
+            class="closed"
+        
+        >
+        <header>
+    <ul>
+        
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        
+        <li>
+            <a href="/index.html" class=link__bolder>
+                1000FPS | Edu
+            </a>
+        </li>
+<!--        <li>
+            <a href="/posts/index.html">
+                Posts
+            </a>
+</li>-->
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            
+
+            
+            
+            <li>
+                <a href="/mobilei.html">
+                    Mobile I
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pea.html">
+                    PeA
+                </a>
+            </li>
+        
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>
+
+        <nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        Mobile I
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        
+        
+        
+        
+        <li> <span class="mdi mdi-home"></span> <a href="/mobilei.html"> Index </a></li>
+
+
+
+
+
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">Aulas</a>
+
+            
+
+            <div class="mission__content">
+                <ul>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Dart
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart01.html">Variáveis 1</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart02.html">Ramificação de Código</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart03.html">Loops</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart04.html">Orientação a Objetos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Flutter
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/instalaflutter.html">Instalação</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/06primeirosPassos.html">Primeiro projeto minimo</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/07widgetsBasicos.html">Widgets Básicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/07widgetsbasicos.html">Widgets Básicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/08Atividade.html">MaterialApp & Scaffold Basico</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    <h1>Loops</h1>
+    <h3>Mobile I | Dart</h3>
+    <hr>
+    <p>Em produção</p>
+
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>
+
+        <footer>
+	<p>
+	</p>
+</footer>
+
+    </body>
+</html>

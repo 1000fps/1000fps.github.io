@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/monokai.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+    integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>
+    04 - Condicionais
+</title>
+</head>
+
+    </head>
+    <body
+        
+            class="closed"
+        
+        >
+        <header>
+    <ul>
+        
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        
+        <li>
+            <a href="/index.html" class=link__bolder>
+                1000FPS | Edu
+            </a>
+        </li>
+<!--        <li>
+            <a href="/posts/index.html">
+                Posts
+            </a>
+</li>-->
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            
+
+            
+            
+            <li>
+                <a href="/mobilei.html">
+                    Mobile I
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pea.html">
+                    PeA
+                </a>
+            </li>
+        
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>
+
+        <nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        PeA
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        
+        
+        
+        
+        <li> <span class="mdi mdi-home"></span> <a href="/pea.html"> Index </a></li>
+
+
+
+
+
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">Aulas</a>
+
+            
+
+            <div class="mission__content">
+                <ul>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Python
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/00introducao.html">01 - Introdução</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/01primeirosPassos.html">02 - Primeiros Passos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/02variaveis.html">03 - Variáveis</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/03condicionais.html">04 - Condicionais</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/04logicos.html">05 - Op. Lógicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/06listas.html">07 - Listas</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/08Arquivos.html">08 - Arquivos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    <h1>04 - Condicionais</h1>
+    <h3>PeA | Python</h3>
+    <hr>
+    <h1 id="na-ultima-aula">Na ultima aula…</h1>
+
+<p>Acabamos de ver como criar variáveis no python, e juntando com os Operadores
+Matemáticos, conseguimos fazer algumas contas e salvar essas contas nas mesmas
+variáveis ou outras variáveis.</p>
+
+<p><img src="img/opwvar.png" alt="" /></p>
+
+<h1 id="operadores-de-comparação">Operadores de comparação.</h1>
+
+<p>Uma outra ação bastante comum que faremos em nossa jornada será a de comparação
+entre diversos “objetos” que encontraremos ao longo de nossos códigos, e para
+isso utilizaremos os operadores de comparação.</p>
+
+<p>Quando usamos esses operadores, nos será devolvida a informação se aquela
+expressão é verdadeira(True) ou falsa(False)</p>
+
+<p>O primeiro que veremos é o comparador de igualdade. Mas pense no que você
+aprendeu até agora!</p>
+
+<p>O que o código abaixo faz?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">variavel1</span> <span class="o">=</span> <span class="mi">300</span>
+</code></pre></div></div>
+
+<p>Se você respondeu alguma coisa no formado de: Define variável como 300, Atribui
+300 para a variável ou salva 300 na memória da variável, parabéns! Você está
+prestando atenção!</p>
+
+<p>Mas… Se utilizamos o sinal de igual para atribuição, como que é o operador de
+igualdade? 🤔</p>
+
+<p>Para isso, dobramos o sinal de igual, e o operador de igualdade então fica <code class="highlighter-rouge">==</code></p>
+
+<p><img src="img/comparadores01.png" alt="" /></p>
+
+<p>Temos diversos outros operadores de comparação, para diferentes situações que
+precisaremos enfrentar.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Nome</th>
+      <th style="text-align: right">Operador</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Igual a</td>
+      <td style="text-align: right"><code class="highlighter-rouge">==</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Maior que</td>
+      <td style="text-align: right"><code class="highlighter-rouge">&gt;</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Maior ou igual a</td>
+      <td style="text-align: right"><code class="highlighter-rouge">&gt;=</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Menor que</td>
+      <td style="text-align: right"><code class="highlighter-rouge">&lt;</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Menor ou igual a</td>
+      <td style="text-align: right"><code class="highlighter-rouge">&lt;=</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Diferente de</td>
+      <td style="text-align: right"><code class="highlighter-rouge">!=</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="condicionais-ifelse">Condicionais <small>if..else</small>.</h1>
+
+<p>Agora que aprendemos a fazer comparações, podemos utilizá-las para tomar
+decisões em nosso código.</p>
+
+<p>Para isso utilizaremos os operadores de comparação em conjunto com as estruturas
+condicionais.</p>
+
+<p>Antes de ver em código, vamos pensar em um exemplo, imagine que para que um
+aluno seja aprovado em uma matéria, ele precisa de uma nota acima de 6.0.
+Podemos refrasear isso da seguinte forma:</p>
+
+<blockquote>
+  <p>Se a nota final do aluno for maior que 6.0 ele estará aprovado, caso contrário
+ele estará reprovado.</p>
+</blockquote>
+
+<p>Se salvarmos a nota do aluno em uma variável <code class="highlighter-rouge">notaFinal</code> por exemplo podemos,
+utilizando o que acabamos de aprender reescrever assim:</p>
+
+<blockquote>
+  <p>Se notaFinal &gt; 6.0 aluno aprovado,</p>
+
+  <p>caso contrário, reprovado</p>
+</blockquote>
+
+<p>Na programação temos uma estrutura que nos permite fazer essas decisões que é o
+if..else, veja como ficaria em um código o exemplo:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">notaFinal</span> <span class="o">&gt;</span> <span class="mf">6.0</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Aprovado"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Reprovado"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>A forma genérica do if..else fica assim:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">condicao</span><span class="p">)</span> <span class="p">:</span>
+    <span class="c1"># Código se condicao for verdadeira
+</span><span class="k">else</span> <span class="p">:</span> 
+    <span class="c1"># Código se condicao for falsa
+</span></code></pre></div></div>
+<p><code class="highlighter-rouge">condicao</code> no código acima, SEMPRE vai ser uma expressão que retorne
+verdadeiro(True) ou falso(False), como nas expressões com os operadores de
+comparação que acabamos de ver.</p>
+
+<p>A segunda parte, depois do <code class="highlighter-rouge">else</code> é opcional e nem sempre iremos utilizá-la.</p>
+
+<p>Para melhor entender o funcionamento da ramificação de código, precisamos pensar
+em “blocos de código”</p>
+
+<p><img src="img/blocosifelse.png" alt="" /></p>
+
+<p>No exemplo acima temos, o programa principal, o bloco <code class="highlighter-rouge">1</code> e o bloco <code class="highlighter-rouge">2</code>. –
+Lembra que no pythons os espaços em branco no começo da linha tem significado? 
+Chamamos isso de indentação, e eles definem esses blocos.</p>
+
+<p>Como que o computador executa esse código?</p>
+
+<p>Ele irá intepretar a linha 4, se a variavel notaFinal for maior que 6.0 então
+<code class="highlighter-rouge">notaFinal &gt; 6.0</code>, será verdadeiro(True), então será executado o bloco <code class="highlighter-rouge">1</code>.</p>
+
+<p>Mas, se notaFinal, não for maior que 6.0, então <code class="highlighter-rouge">notaFinal &gt; 6.0</code> será
+falso(False), e então a execução irá pular para a linha 6. Como é uma expressão
+else, então será execudado o código do bloco <code class="highlighter-rouge">2</code>, e depois seguindo o script</p>
+
+<h3 id="mais-exemplos">Mais Exemplos:</h3>
+
+<div data-filename="Bom dia ou boa noite" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">horaDoDia</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Bom Dia"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Boa Noite"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div data-filename="Checa numero par" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span><span class="p">):</span> <span class="c1">#Lembra como resto da função funciona?
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"Numero par"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="k">print</span><span class="p">(</span><span class="s">"Numero impar"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="ifelifelse">if..elif..else</h2>
+
+<p>Muita vezes, apenas uma condição não é suficiente, a precisamos verificar
+diversas condições, para casos diferentes.</p>
+
+<p>Vamos pensar em um restaurante que sirva o café da manhâ, almoço, e janta, e
+tenha cardápios diferentes, podemos fazer o seguinte código:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">horaDoDia</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Cardápio café"</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="p">(</span><span class="n">horaDoDia</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Cardápio almoço"</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Cardápio jantar"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>“Traduzido” esse código para portugues:</p>
+<blockquote>
+  <p>se a horaDoDia for menor que 11 horas, será cardápio de café da manha,</p>
+
+  <p>mas se a hora do dia for maior que 11 horas, e menor que 16 horas, o cardápio
+será de almoço,</p>
+
+  <p>e por fim, se a hora do dia for maior que 16 horas, o cardápio será de jantar.</p>
+</blockquote>
+
+<p>o uso do elif é bastante parecido com o do if, com a diferença que ele
+“encadeia” as verificações.</p>
+
+<p>E se a primeira condição for verdadeira as outras nem são testadas.</p>
+
+
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>
+
+        <footer>
+	<p>
+	</p>
+</footer>
+
+    </body>
+</html>

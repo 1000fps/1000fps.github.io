@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/monokai.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+    integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>
+    02 - Primeiros Passos
+</title>
+</head>
+
+    </head>
+    <body
+        
+            class="closed"
+        
+        >
+        <header>
+    <ul>
+        
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        
+        <li>
+            <a href="/index.html" class=link__bolder>
+                1000FPS | Edu
+            </a>
+        </li>
+<!--        <li>
+            <a href="/posts/index.html">
+                Posts
+            </a>
+</li>-->
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            
+
+            
+            
+            <li>
+                <a href="/mobilei.html">
+                    Mobile I
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pea.html">
+                    PeA
+                </a>
+            </li>
+        
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>
+
+        <nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        PeA
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        
+        
+        
+        
+        <li> <span class="mdi mdi-home"></span> <a href="/pea.html"> Index </a></li>
+
+
+
+
+
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">Aulas</a>
+
+            
+
+            <div class="mission__content">
+                <ul>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Python
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/00introducao.html">01 - Introdução</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/01primeirosPassos.html">02 - Primeiros Passos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/02variaveis.html">03 - Variáveis</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/03condicionais.html">04 - Condicionais</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/04logicos.html">05 - Op. Lógicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/06listas.html">07 - Listas</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/08Arquivos.html">08 - Arquivos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    <h1>02 - Primeiros Passos</h1>
+    <h3>PeA | Python</h3>
+    <hr>
+    <h1 id="meu-primeiro-script-python">Meu primeiro script Python</h1>
+
+<p>Agora que estamos com o Python configurado, vamos criar o nosso primeiro
+primeiro programa.</p>
+
+<p>Abra o Thonny – Ou seu editor de texto favorito – e coloque o seguinte código:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Uhul! Python é muito legal"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Feito isso salve o arquivo como <code class="highlighter-rouge">olaPython.py</code></p>
+
+<p><img src="img/hello.png" alt="" /></p>
+
+<p>Agora clique no simbolo de “Tocar/Play” no editor. Se tudo deu certo teremos
+algo como na imagem:</p>
+
+<p><img src="img/hello02.png" alt="" /></p>
+
+<p class="dica">Se você gosta de atalhos, podemos utilizar a tecla F5 no teclado para executar
+nosso programa também. No Visual Studio Code também funciona.</p>
+
+<h2 id="mas-o-que-aconteceu">Mas o que aconteceu?</h2>
+
+<p>Quando pedimos para o Thonny “rodar” nosso script, na verdade estamos pedindo
+para que o <strong>Interpretador</strong> Python executa <code class="highlighter-rouge">linha a linha</code> o que está escrito
+em nosso código. No caso é apenas o comando <code class="highlighter-rouge">print</code> que irá “Imprimir no
+terminal” o que quer que tenhamos passado dentro dos parenteses dela.</p>
+
+<p>Temos que tomar MUITO cuidado quando estamos escrevendo nossos códigos em python
+pois os espaços em branco tem significado!!! Veja:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Uma Linha"</span><span class="p">)</span>
+ <span class="k">print</span><span class="p">(</span><span class="s">"Outra Linha"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Ainda outra linha"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>O Código acima dará erro, pois a segunda linha tem um espaço vazio antes do
+comando.</p>
+
+<p><img src="img/erro01.png" alt="" /></p>
+
+<p>Esses espaços que tem significado,chamamos de <code class="highlighter-rouge">indentação</code>, e no caso do erro
+acima é exatamente um Erro de indentação (IndentationError).</p>
+
+<p>Um pouco mais pra frente no curso iremos retomar esse conceito, mas por enquanto
+lembre-se de não deixar nenhum espaço no começo de sua linha de código.</p>
+
+<h1 id="interpretador">Interpretador</h1>
+
+<p>Na parte de baixo do Thonny, onde está escrito shell, temos rodando o Interpretador, e com ele podemos
+executar alguns comandos para serem executados instantâneamente.</p>
+
+<p>Tente por exemplo fazer algumas operações matemáticas.</p>
+
+<p><img src="img/interpretador.png" alt="" /></p>
+
+<p>Podemos utlizar o intepretador para diversas coisas, e ao longo do curso vamos
+o conhecendo um pouquinho melhor.</p>
+
+<h1 id="operadores-matemáticos">Operadores Matemáticos</h1>
+
+<p>Acabamos de ver na sessão anterior que podemos fazer operações matemáticas
+e o intepretador do Python nos dará as respostas. Assim podemos fazer todas as
+operações matemáticas básicas.</p>
+
+<p><code class="highlighter-rouge">adição</code>, que utilizamos o o sinal de mais (+):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">42</span> <span class="o">+</span> <span class="mi">68</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">subtração</code>, que utilizamos o sinal de menos (-):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">50</span> <span class="o">-</span> <span class="mi">25</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">multiplicação</code>, que utilizamos o sinal de asterisco (*):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">10</span> <span class="o">*</span> <span class="mi">30</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">divisão</code>, que utilizamos o sinal de barra (/)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">100</span> <span class="o">/</span> <span class="mi">50</span>
+</code></pre></div></div>
+
+<p>Temos ainda um operador que será bastante utilizado que é o operador de <code class="highlighter-rouge">resto da
+divisão inteira</code>, representado pelo sinal de porcentagem (%).</p>
+
+<p>Na imagem, a caixa azul é o resto.</p>
+
+<p><img src="img/resto.png" alt="" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">14</span> <span class="o">%</span> <span class="mi">5</span>
+</code></pre></div></div>
+
+<p><img src="img/operadoresMat.png" alt="" /></p>
+
+
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>
+
+        <footer>
+	<p>
+	</p>
+</footer>
+
+    </body>
+</html>

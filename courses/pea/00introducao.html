@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/monokai.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+    integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>
+    01 - Introdução
+</title>
+</head>
+
+    </head>
+    <body
+        
+            class="closed"
+        
+        >
+        <header>
+    <ul>
+        
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        
+        <li>
+            <a href="/index.html" class=link__bolder>
+                1000FPS | Edu
+            </a>
+        </li>
+<!--        <li>
+            <a href="/posts/index.html">
+                Posts
+            </a>
+</li>-->
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            
+
+            
+            
+            <li>
+                <a href="/mobilei.html">
+                    Mobile I
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pea.html">
+                    PeA
+                </a>
+            </li>
+        
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>
+
+        <nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        PeA
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        
+        
+        
+        
+        <li> <span class="mdi mdi-home"></span> <a href="/pea.html"> Index </a></li>
+
+
+
+
+
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">Aulas</a>
+
+            
+
+            <div class="mission__content">
+                <ul>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Python
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/00introducao.html">01 - Introdução</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/01primeirosPassos.html">02 - Primeiros Passos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/02variaveis.html">03 - Variáveis</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/03condicionais.html">04 - Condicionais</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/04logicos.html">05 - Op. Lógicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/06listas.html">07 - Listas</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/pea/08Arquivos.html">08 - Arquivos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    <h1>01 - Introdução</h1>
+    <h3>PeA | Python</h3>
+    <hr>
+    <p>Vamos começar a nossa jornada em direção a sermos programadores, e
+programadoras, mas para isso precisamos começar de algum lugar.</p>
+
+<p>Iremos utilizar o python para o primeiro contato com a programação, e para isso
+temos algumas opções para configurá-lo.</p>
+
+<h2 id="versão-portátil">Versão portátil.</h2>
+
+<p>Essa versão será a que utilizaremos em sala de aula, pois ela nos permite
+estudar em qualquer lugar. Ela conta com uma distribuição do Python 3. E um
+editor de texto que ira nos ajudar a entender o que está acontecendo ao longo de
+nossos scripts o Thonny.</p>
+
+<p>Acesse o site
+<a href="https://www.portabledevapps.net/python-portable.php">PortableDevApps</a> e baixe a
+versão com o Python mais novo.</p>
+
+<p>Faça a instalação em um pendrive/hd externo, e sempre que necessário você terá
+acesso ao python para estudar.</p>
+
+<h2 id="versão-instalável">Versão instalável.</h2>
+
+<p>Para essa versão iremos utilizar a distribuição oficial do Python que pode ser
+encontrada em
+<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+
+<p>Baixe a versão mais nova…..</p>
+
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>
+
+        <footer>
+	<p>
+	</p>
+</footer>
+
+    </body>
+</html>

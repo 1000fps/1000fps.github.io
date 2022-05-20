@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/monokai.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+    integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>
+    MaterialApp & Scaffold Basico
+</title>
+</head>
+
+    </head>
+    <body
+        
+            class="closed"
+        
+        >
+        <header>
+    <ul>
+        
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        
+        <li>
+            <a href="/index.html" class=link__bolder>
+                1000FPS | Edu
+            </a>
+        </li>
+<!--        <li>
+            <a href="/posts/index.html">
+                Posts
+            </a>
+</li>-->
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            
+
+            
+            
+            <li>
+                <a href="/mobilei.html">
+                    Mobile I
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pea.html">
+                    PeA
+                </a>
+            </li>
+        
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>
+
+        <nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        Mobile I
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        
+        
+        
+        
+        <li> <span class="mdi mdi-home"></span> <a href="/mobilei.html"> Index </a></li>
+
+
+
+
+
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">Aulas</a>
+
+            
+
+            <div class="mission__content">
+                <ul>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Dart
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart01.html">Variáveis 1</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart02.html">Ramificação de Código</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart03.html">Loops</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart04.html">Orientação a Objetos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Flutter
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/instalaflutter.html">Instalação</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/06primeirosPassos.html">Primeiro projeto minimo</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/07widgetsBasicos.html">Widgets Básicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/07widgetsbasicos.html">Widgets Básicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/08Atividade.html">MaterialApp & Scaffold Basico</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    <h1>MaterialApp & Scaffold Basico</h1>
+    <h3>Mobile I | Flutter</h3>
+    <hr>
+    <p>Na ultima aula, vimos com utilizar os widgets MaterialApp e Scaffold:</p>
+
+<p>O primeiro é responsável por carregar as configurações e estilos padrão do
+“MaterialApp”.</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">Widget</span> <span class="nf">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">MaterialApp</span><span class="o">(</span>
+      <span class="nl">title:</span> <span class="s">'Primeiro Stateful'</span><span class="o">,</span>
+      <span class="nl">home:</span> <span class="kd">const</span> <span class="n">MinhaHome</span><span class="o">(),</span>
+    <span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Ele tem por parâmetros o título, que é uma string <code class="highlighter-rouge">title: 'Primeiro Stateful'</code>,
+e o parâmetro home, que deve ser o Widget principal de nossa aplicação.</p>
+
+<p>O Scaffold, é um componente que pode ter uma série de elementos, comuns
+utilizados em diversos aplicativos.</p>
+
+<p>O Uso básico dele seria com um Cabeçalho, que é um AppBar, e um “corpo” que é o
+body.</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">Scaffold</span><span class="o">(</span>
+      <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="o">(</span>
+        <span class="nl">title:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Título"</span><span class="o">),</span>
+      <span class="o">),</span>
+      <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
+        <span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Corpo do App"</span><span class="o">),</span> 
+          
+      <span class="o">),</span>
+    <span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p><img src="img/800.png" alt="" /></p>
+
+<p>Na imagem parte selecionada em vermelho é o Componente AppBar, e a parte em
+verde é o Componente body.</p>
+
+<p>Atenção, que o parâmetro appBar do Scafold tem que ser um AppBar ou Algo que
+herde de AppBar.</p>
+
+<p>O Scaffold tem ainda uma série de outros parâmetros, que são elementos que
+compõem nosso layout, vamos ver mais um que é o BottomNavigationBar</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">Scaffold</span><span class="o">(</span>
+      <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="o">(</span>
+        <span class="nl">title:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Título"</span><span class="o">),</span>
+      <span class="o">),</span>
+      <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
+        <span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Corpo do App"</span><span class="o">),</span> 
+          
+      <span class="o">),</span>
+      <span class="nl">bottomNavigationBar:</span> <span class="n">BottomAppBar</span><span class="o">(</span>
+        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">red</span><span class="o">,</span>
+        <span class="nl">child:</span> <span class="n">Container</span><span class="o">(</span><span class="nl">height:</span> <span class="mi">50</span><span class="o">,</span>
+            <span class="nl">child:</span><span class="n">Center</span><span class="o">(</span><span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Bottom App Bar"</span><span class="o">))</span>
+            <span class="o">)</span>
+      <span class="o">)</span>
+    <span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p><img src="img/801.png" alt="" /></p>
+
+<p>Por enquanto o código completo dessa app ficou assim:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">'package:flutter/material.dart'</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">runApp</span><span class="o">(</span><span class="kd">const</span> <span class="n">MyApp</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">MyApp</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="nl">key:</span> <span class="n">key</span><span class="o">);</span>
+
+  <span class="nd">@override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">MaterialApp</span><span class="o">(</span>
+      <span class="nl">title:</span> <span class="s">'Primeiro Stateful'</span><span class="o">,</span>
+      <span class="nl">home:</span> <span class="kd">const</span> <span class="n">MinhaHome</span><span class="o">(),</span>
+    <span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">MinhaHome</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span><span class="o">{</span>
+    <span class="kd">const</span> <span class="n">MinhaHome</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="nl">key:</span> <span class="n">key</span><span class="o">);</span>
+
+    <span class="nd">@override</span>
+    <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Scaffold</span><span class="o">(</span>
+            <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="o">(</span>
+                <span class="nl">title:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Título"</span><span class="o">),</span>
+            <span class="o">),</span>
+        <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
+            <span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Corpo do App"</span><span class="o">),</span> 
+        <span class="o">),</span>
+        <span class="nl">bottomNavigationBar:</span> <span class="n">BottomAppBar</span><span class="o">(</span>
+            <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">red</span><span class="o">,</span>
+            <span class="nl">child:</span> <span class="n">Container</span><span class="o">(</span><span class="nl">height:</span> <span class="mi">50</span><span class="o">,</span>
+                <span class="nl">child:</span> <span class="n">Center</span><span class="o">(</span><span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Bottom App Bar"</span><span class="o">))</span>
+            <span class="o">)</span>
+        <span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>O próximo passo que faremos será adicionar interações para essa aplicação: Para
+isso precisamos transformar a Classe MinhaHome em um Stateful Widget, faça a
+seguinte alteração:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MinhaHome</span> <span class="kd">extends</span> <span class="n">StatefulWidget</span><span class="o">{</span>
+</code></pre></div></div>
+
+<p>StateFulll widgets são elementos que podem se redesenhar quando seu estado é
+modificado, e definimos estado pelos atributos da classe.</p>
+
+<p>Para continuar alterando o “MinhaHome” para ser um statefull precisaremos
+definir a função <code class="highlighter-rouge">createState()</code>.</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MinhaHome</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span><span class="o">{</span>
+    <span class="kd">const</span> <span class="n">MinhaHome</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="nl">key:</span> <span class="n">key</span><span class="o">);</span>
+
+    <span class="nd">@override</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">MinhaHome</span><span class="o">&gt;</span> <span class="n">createState</span><span class="o">()</span> <span class="o">=&gt;</span> <span class="n">_MinhaHomeState</span><span class="o">();</span>
+
+    <span class="c1">//Continua..</span>
+</code></pre></div></div>
+
+<p>Estamos usando o construtor <code class="highlighter-rouge">_MinhaHomeState()</code> mas ainda não definimos essa
+classe. Vamos fazer isso agora:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">_MinhaHomeState</span> <span class="kd">extends</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">MinhaHome</span><span class="o">&gt;{</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>O próximo passo, é definir quais são os parâmetros que irão definir nosso
+estado: vamos utilizar largura e altura de uma imagem por exemplo:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">_MinhaHomeState</span> <span class="kd">extends</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">MinhaHome</span><span class="o">&gt;{</span>
+    <span class="kt">int</span> <span class="n">_largura</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">_altura</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Com o código acima criamos os parâmetros de nosso estado, e definimos que seus
+valores iniciais são 10.</p>
+
+<p>Agora, precisamos transferir o método Build que criamos na classe MinhaHome para
+a classe _MinhaHomeState, pode cortar e colar de uma para a outra, seu código
+para essas duas classes deverá ficar como abaixo:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MinhaHome</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span><span class="o">{</span>
+    <span class="kd">const</span> <span class="n">MinhaHome</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="nl">key:</span> <span class="n">key</span><span class="o">);</span>
+
+    <span class="nd">@override</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">MinhaHome</span><span class="o">&gt;</span> <span class="n">createState</span><span class="o">()</span> <span class="o">=&gt;</span> <span class="n">_MinhaHomeState</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">_MinhaHomeState</span> <span class="kd">extends</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">MinhaHome</span><span class="o">&gt;{</span>
+    <span class="kt">int</span> <span class="n">_largura</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">_altura</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+
+    <span class="nd">@override</span>
+    <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Scaffold</span><span class="o">(</span>
+            <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="o">(</span>
+                <span class="nl">title:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Título"</span><span class="o">),</span>
+            <span class="o">),</span>
+        <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
+            <span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Corpo do App"</span><span class="o">),</span> 
+        <span class="o">),</span>
+        <span class="nl">bottomNavigationBar:</span> <span class="n">BottomAppBar</span><span class="o">(</span>
+            <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">red</span><span class="o">,</span>
+            <span class="nl">child:</span> <span class="n">Container</span><span class="o">(</span><span class="nl">height:</span> <span class="mi">50</span><span class="o">,</span>
+                <span class="nl">child:</span> <span class="n">Center</span><span class="o">(</span><span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Bottom App Bar"</span><span class="o">))</span>
+            <span class="o">)</span>
+        <span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Vamos mudar o o texto do corpo(body) para conseguirmos ver os parâmetros do
+nosso estado, faça assim:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//Codigo....</span>
+    <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
+        <span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Largura: </span><span class="si">$_largura</span><span class="s">, Altura: </span><span class="si">$_altura</span><span class="s">"</span><span class="o">)</span>
+    <span class="c1">//Codigo....</span>
+</code></pre></div></div>
+
+<p>Se tudo estiver certo seu app deve estar assim:</p>
+
+<p><img src="img/802.png" alt="" /></p>
+
+<h1 id="desafio">Desafio:</h1>
+<p>Vamos deixar o body desse app um pouco mais interessante!</p>
+
+<p>Utilize um dos sites abaixo:</p>
+
+<ul>
+  <li>https://placeholder.com</li>
+  <li>https://placekitten.com</li>
+  <li>http://placebacon.net</li>
+  <li>https://placebear.com</li>
+  <li>https://place-puppy.com</li>
+  <li>https://picsum.photos</li>
+  <li>https://www.placecage.com</li>
+  <li>https://loremflickr.com</li>
+</ul>
+
+<p>Para inserir uma imagem no corpo do app.</p>
+
+<hr />
+
+<p>O próximo passo agora é criar uma forma de interagir com o app, faremos isso
+através de botoes, e de ícones.</p>
+
+<p>Para criar um ícone, podemos usar o widget Icon</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Icon</span><span class="o">(</span>
+    <span class="n">Icons</span><span class="o">.</span><span class="na">home</span><span class="o">,</span>
+    <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span>
+    <span class="o">)</span>
+</code></pre></div></div>
+
+<p>E para criar um Botão com icone utilizamos o Icon Button,</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">IconButton</span><span class="o">(</span>
+    <span class="nl">icon:</span> <span class="n">Icons</span><span class="o">.</span><span class="na">home</span><span class="o">,</span>
+    <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+    <span class="nl">onPressed:</span> <span class="o">(){},</span>
+    <span class="o">)</span>
+</code></pre></div></div>
+
+<p>Perceba que o IconButton tem o parâmetro onPressed, é nele que iremos colocar a
+funcionalidade que queremos quando clicarmos neste botão.</p>
+
+<p>Vamos colocar os botões e ícones no BottomAppBar</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//Codigo...</span>
+        <span class="nl">bottomNavigationBar:</span> <span class="n">BottomAppBar</span><span class="o">(</span>
+            <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">red</span><span class="o">,</span>
+            <span class="nl">child:</span> <span class="n">Container</span><span class="o">(</span><span class="nl">height:</span> <span class="mi">50</span><span class="o">,</span>
+                <span class="nl">child:</span> <span class="n">Row</span><span class="o">(</span> 
+                    <span class="nl">children:</span> <span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;[</span>
+                    <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">width_normal</span><span class="o">,</span> <span class="nl">color:</span><span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">),</span>
+                    <span class="n">IconButton</span><span class="o">(</span>
+                        <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">add_circle</span><span class="o">),</span>
+                        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+                        <span class="nl">onPressed:</span> <span class="o">(){}</span>
+                    <span class="o">),</span>
+                    <span class="n">IconButton</span><span class="o">(</span>
+                        <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">remove_circle</span><span class="o">),</span>
+                        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+                        <span class="nl">onPressed:</span> <span class="o">(){}</span>
+                    <span class="o">),</span>
+                    <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">height_outlined</span><span class="o">,</span> <span class="nl">color:</span><span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">),</span>
+                    <span class="n">IconButton</span><span class="o">(</span>
+                        <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">add_circle</span><span class="o">),</span>
+                        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+                        <span class="nl">onPressed:</span> <span class="o">(){}</span>
+                    <span class="o">),</span>
+                    <span class="n">IconButton</span><span class="o">(</span>
+                        <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">remove_circle</span><span class="o">),</span>
+                        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+                        <span class="nl">onPressed:</span> <span class="o">(){}</span>
+                    <span class="o">)</span>
+                <span class="o">]</span>
+                <span class="o">)</span>
+            <span class="o">)</span>
+    <span class="c1">//Codigo</span>
+</code></pre></div></div>
+
+<p>Se tudo tiver dado certo o app ficará mais ou menos assim:</p>
+
+<p><img src="img/803.png" alt="" /></p>
+
+<p>Vamos fazer os botões funcionar agora, crie as funções AumentarLargura,
+DiminuirLargura, AumentarAltura e diminuirAltura</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">_MinhaHomeState</span> <span class="kd">extends</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">MinhaHome</span><span class="o">&gt;{</span>
+    <span class="kt">int</span> <span class="n">_largura</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">_altura</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+
+    <span class="kt">void</span> <span class="n">AumentarLargura</span><span class="o">(){</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="n">DiminuirLargura</span><span class="o">(){</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="n">AumentarAltura</span><span class="o">(){</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="n">DiminuirAltura</span><span class="o">(){</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Vou mostrar como deve ficar o AumentarLargura, e os outros são semelhantes, para
+que nosso aplicativo seja redesenhado precisamos chamar a função setState, veja
+como irá ficar:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="kt">void</span> <span class="nf">AumentarLargura</span><span class="p">(</span><span class="o">){</span>
+        <span class="n">setState</span><span class="o">(</span> <span class="o">()</span> <span class="o">{</span>
+            <span class="n">_largura</span> <span class="o">+=</span> <span class="mi">10</span><span class="o">;</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>E para que o botão dele funcione, precisamos atribuir essa função no parâmetro
+onPressed dos botões veja:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">IconButton</span><span class="o">(</span>
+    <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">add_circle</span><span class="o">),</span>
+    <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+    <span class="nl">onPressed:</span> <span class="n">AumentarLargura</span><span class="o">,</span>
+<span class="o">),</span>
+</code></pre></div></div>
+
+<p>O código completo com só o primeiro botão funcionando ficará assim:</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">'package:flutter/material.dart'</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">runApp</span><span class="o">(</span><span class="kd">const</span> <span class="n">MyApp</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">MyApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="o">{</span>
+  <span class="kd">const</span> <span class="n">MyApp</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="nl">key:</span> <span class="n">key</span><span class="o">);</span>
+
+  <span class="nd">@override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">MaterialApp</span><span class="o">(</span>
+      <span class="nl">title:</span> <span class="s">'Primeiro Statefull'</span><span class="o">,</span>
+      <span class="nl">home:</span> <span class="n">MinhaHome</span><span class="o">(),</span>
+    <span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">MinhaHome</span> <span class="kd">extends</span> <span class="n">StatefulWidget</span><span class="o">{</span>
+    <span class="kd">const</span> <span class="n">MinhaHome</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="nl">key:</span> <span class="n">key</span><span class="o">);</span>
+
+    <span class="nd">@override</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">MinhaHome</span><span class="o">&gt;</span> <span class="n">createState</span><span class="o">()</span> <span class="o">=&gt;</span> <span class="n">_MinhaHomeState</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">_MinhaHomeState</span> <span class="kd">extends</span> <span class="n">State</span><span class="o">&lt;</span><span class="n">MinhaHome</span><span class="o">&gt;{</span>
+    <span class="kt">int</span> <span class="n">_largura</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">_altura</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+
+    <span class="kt">void</span> <span class="n">AumentarLargura</span><span class="o">(){</span>
+        <span class="n">setState</span><span class="o">(</span> <span class="o">()</span> <span class="o">{</span>
+            <span class="n">_largura</span> <span class="o">+=</span> <span class="mi">10</span><span class="o">;</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="n">DiminuirLargura</span><span class="o">(){</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="n">AumentarAltura</span><span class="o">(){</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="n">DiminuirAltura</span><span class="o">(){</span>
+    <span class="o">}</span>
+
+    <span class="nd">@override</span>
+    <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Scaffold</span><span class="o">(</span>
+            <span class="nl">appBar:</span> <span class="n">AppBar</span><span class="o">(</span>
+                <span class="nl">title:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Título"</span><span class="o">),</span>
+            <span class="o">),</span>
+        <span class="nl">body:</span> <span class="n">Center</span><span class="o">(</span>
+            <span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Largura: </span><span class="si">$_largura</span><span class="s">, Altura </span><span class="si">$_altura</span><span class="s">"</span><span class="o">),</span> 
+        <span class="o">),</span>
+        <span class="nl">bottomNavigationBar:</span> <span class="n">BottomAppBar</span><span class="o">(</span>
+            <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">red</span><span class="o">,</span>
+            <span class="nl">child:</span> <span class="n">Container</span><span class="o">(</span><span class="nl">height:</span> <span class="mi">50</span><span class="o">,</span>
+                <span class="nl">child:</span> <span class="n">Row</span><span class="o">(</span> 
+                    <span class="nl">children:</span> <span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;[</span>
+                    <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">width_normal</span><span class="o">,</span> <span class="nl">color:</span><span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">),</span>
+                    <span class="n">IconButton</span><span class="o">(</span>
+                        <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">add_circle</span><span class="o">),</span>
+                        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+                        <span class="nl">onPressed:</span> <span class="n">AumentarLargura</span>
+                    <span class="o">),</span>
+                    <span class="n">IconButton</span><span class="o">(</span>
+                        <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">remove_circle</span><span class="o">),</span>
+                        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+                        <span class="nl">onPressed:</span> <span class="o">(){}</span>
+                    <span class="o">),</span>
+                    <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">height_outlined</span><span class="o">,</span> <span class="nl">color:</span><span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">),</span>
+                    <span class="n">IconButton</span><span class="o">(</span>
+                        <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">add_circle</span><span class="o">),</span>
+                        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+                        <span class="nl">onPressed:</span> <span class="o">(){}</span>
+                    <span class="o">),</span>
+                    <span class="n">IconButton</span><span class="o">(</span>
+                        <span class="nl">icon:</span> <span class="n">Icon</span><span class="o">(</span><span class="n">Icons</span><span class="o">.</span><span class="na">remove_circle</span><span class="o">),</span>
+                        <span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">white</span><span class="o">,</span>
+                        <span class="nl">onPressed:</span> <span class="o">(){}</span>
+                    <span class="o">)</span>
+                <span class="o">]</span>
+                <span class="o">)</span>
+            <span class="o">)</span>
+        <span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>
+
+        <footer>
+	<p>
+	</p>
+</footer>
+
+    </body>
+</html>

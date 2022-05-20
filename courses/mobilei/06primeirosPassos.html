@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/monokai.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+    integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>
+    Primeiro projeto minimo
+</title>
+</head>
+
+    </head>
+    <body
+        
+            class="closed"
+        
+        >
+        <header>
+    <ul>
+        
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        
+        <li>
+            <a href="/index.html" class=link__bolder>
+                1000FPS | Edu
+            </a>
+        </li>
+<!--        <li>
+            <a href="/posts/index.html">
+                Posts
+            </a>
+</li>-->
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            
+
+            
+            
+            <li>
+                <a href="/mobilei.html">
+                    Mobile I
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pea.html">
+                    PeA
+                </a>
+            </li>
+        
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>
+
+        <nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        Mobile I
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        
+        
+        
+        
+        <li> <span class="mdi mdi-home"></span> <a href="/mobilei.html"> Index </a></li>
+
+
+
+
+
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">Aulas</a>
+
+            
+
+            <div class="mission__content">
+                <ul>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Dart
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart01.html">Variáveis 1</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart02.html">Ramificação de Código</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart03.html">Loops</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart04.html">Orientação a Objetos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Flutter
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/instalaflutter.html">Instalação</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/06primeirosPassos.html">Primeiro projeto minimo</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/07widgetsBasicos.html">Widgets Básicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/07widgetsbasicos.html">Widgets Básicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/08Atividade.html">MaterialApp & Scaffold Basico</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    <h1>Primeiro projeto minimo</h1>
+    <h3>Mobile I | Flutter</h3>
+    <hr>
+    <h1 id="primeiro-projeto-mínimo">Primeiro projeto mínimo</h1>
+
+<h2 id="objetivos-de-aprendizado">Objetivos de Aprendizado</h2>
+
+<p>Ao final deste roteiro você será capaz de criar uma aplicação minima em flutter,
+e entender os primeiros conceitos da construção de layout dele.</p>
+
+<h1 id="para-começar">Para começar</h1>
+
+<p>Vamos começar um projeto novo com a ferramenta de linha de comando do flutter,
+com a pasta em nosso <strong>PATH</strong> podemos criar um novo projeto com o comando
+a seguir:</p>
+
+<hr />
+
+<p>flutter create AulaWidgetsBasicos</p>
+
+<hr />
+
+<p>Feito isso podemos abrir com o nosso editor de preferência a pasta que foi criada,</p>
+
+<p>Teremos uma estrutura que deve ser algo como abaixo:</p>
+
+<hr />
+
+<pre>
+<span class="mdi mdi-folder"></span> AulaWidgetsBasicos
+├── <span class="mdi mdi-file"></span>analysis\_options.yaml
+├── <span class="mdi mdi-folder"></span> android
+├── <span class="mdi mdi-folder"></span> build
+├── <span class="mdi mdi-folder"></span> ios
+├── <span class="mdi mdi-folder"></span> lib
+├── <span class="mdi mdi-file"></span>pubspec.lock
+├── <span class="mdi mdi-file"></span>pubspec.yaml
+├── <span class="mdi mdi-file"></span>README.md
+├── <span class="mdi mdi-folder"></span> test
+├── <span class="mdi mdi-file"></span>testdrive.iml
+└── <span class="mdi mdi-folder"></span> web
+</pre>
+
+<hr />
+
+<p>Dentro da pasta <code class="highlighter-rouge">lib</code>, temos um arquivo chamado <code class="highlighter-rouge">main.dart</code>.</p>
+
+<p>Abra esse arquivo e apague todo seu conteúdo, pois iremos reescrevê-lo aos
+poucos para que possamos entender o que está acontecendo.</p>
+
+<p>Vamos começar com a primeira linha</p>
+
+<div data-filename="main.dart" class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">"package:flutter/widgets.dart"</span>
+</code></pre></div></div>
+
+<p>Quando utilizamos o <code class="highlighter-rouge">import</code> no começo de nosso arquivo, estamos falando para o
+“compilador” que queremos utilizar o conteúdo deste pacote em nosso código.</p>
+
+<p>Nesse caso estamos indicando que precisamos dos widgets básicos que o flutter
+fornece para utilizar em nosso código.</p>
+
+<p>Para isso temos ainda outras duas opções:</p>
+
+<p><code class="highlighter-rouge">package:flutter/material.dart</code>, que irá fornecer widgets bastante comuns que
+utilizamos quando estamos fazendo aplicações Android. Material, vem de <strong>Material
+Design</strong> que é o padrão de design estabelecido pelo Google. Você pode consultá-lo
+no site oficial <a href="https://material.io/design">material.io</a>.</p>
+
+<p>A outra opção que temos é a <code class="highlighter-rouge">packages:flutter/cupertino.dart</code> em que temos
+widgets que seguem os padrões de design definidos pela apple. <a href="https://developer.apple.com/design/">Apple
+Design</a></p>
+
+<p>Seguindo em nosso código, precisamos agora criar o ponto de entrada de nosso
+projeto, mais conhecido como função main. É a partir dela que nosso projeto
+começará a ser executado.</p>
+
+<div data-filename="main.dart" class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">"package:flutter/widgets.dart"</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">){</span>
+    <span class="n">runApp</span><span class="o">(</span><span class="cm">/*TODO*/</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Criamos a função <code class="highlighter-rouge">main</code>, e ela está apensa chamando a função <code class="highlighter-rouge">runApp</code>, mas ainda
+não terminamos, por isso o <code class="highlighter-rouge">/*TODO*/</code>, essa função, tem como parâmetro um
+Widget, que iremos escrever em breve o nosso. O widget que é passado como
+parâmetro para a função <code class="highlighter-rouge">runApp</code> se torna o Widget raiz de nossa aplicação, e o
+Flutter força esse elemento a tomar toda a tela disponível.</p>
+
+<p>Bom vamos então criar um novo widget para ser a raiz do nosso programa, para
+isso é preciso criar uma classe, que herde de algum outro widget, vamos começar
+pala <code class="highlighter-rouge">StatelessWidget</code>, Utilizamos esta classe base quando precisamos criar
+elementos que não serão atualizados em “tempo de execução”, isso significa que
+ele só depende das condições iniciais para sua construção e não será atualizado,
+ou será atualizado muito pouco depois disso.</p>
+
+<div data-filename="main.dart" class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">"package:flutter/widgets.dart"</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">){</span>
+    <span class="n">runApp</span><span class="o">(</span><span class="cm">/*TODO*/</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">PrimeiroElementos</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span><span class="o">{</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Com o código acima demos o primeiro passo para construir um widget nosso.
+Precisamos agora definir um construtor para nossa classe, e implementar o método
+build.</p>
+
+<div data-filename="main.dart" class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">"package:flutter/widgets.dart"</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">){</span>
+    <span class="n">runApp</span><span class="o">(</span><span class="cm">/*TODO*/</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">PrimeiroElementos</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span><span class="o">{</span>
+    <span class="c1">//Construtor</span>
+    <span class="n">PrimeiroElemento</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="n">key</span> <span class="o">:</span> <span class="n">key</span><span class="o">);</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Agora definimos o construtor de nossa classe PrimeiroElemento, vamos rever
+algumas coisas dessa linha.</p>
+
+<p>Temos a seguinte construção <code class="highlighter-rouge">{Key? key}</code>, essa é a forma que o DART/FLUTTER usa
+para a utilização de <strong>parâmetros nomeados</strong>, neste caso, estamos criando um
+parâmetro de nome key, e que o tipo de Key?, a interrogação indicando que pode
+conter um valor nulo.</p>
+
+<p>Um outro exemplo seria <code class="highlighter-rouge">{String titulo}</code> nesse caso estamos criando um parâmetro
+nomeado titulo, com o tipo String.</p>
+
+<p>Outra parte que precisamos tomar atenção é a <code class="highlighter-rouge">: super(key : key)</code>. Isso está
+chamando o construtor da classe pai, no caso <code class="highlighter-rouge">StatelessWidget</code>, e passamos por
+parâmetro a <code class="highlighter-rouge">key</code> que foi recebida como parâmetro nomeado do nosso construtor.</p>
+
+<p>Agora vamos implementar o método build.</p>
+
+<div data-filename="main.dart" class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">"package:flutter/widgets.dart"</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">){</span>
+    <span class="n">runApp</span><span class="o">(</span><span class="cm">/*TODO*/</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">PrimeiroElementos</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span><span class="o">{</span>
+    <span class="c1">//Construtor</span>
+    <span class="n">PrimeiroElemento</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="n">key</span> <span class="o">:</span> <span class="n">key</span><span class="o">);</span>
+
+    <span class="nd">@override</span>
+    <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">Center</span><span class="o">();</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Para finalizar trocamos o <code class="highlighter-rouge">/*TODO*/</code> em <code class="highlighter-rouge">runApp</code> para o construtor da classe que
+acabamos de criar.</p>
+
+<div data-filename="main.dart" class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">"package:flutter/widgets.dart"</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">){</span>
+    <span class="n">runApp</span><span class="o">(</span><span class="n">PrimeiroElemento</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">PrimeiroElementos</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span><span class="o">{</span>
+    <span class="c1">//Construtor</span>
+    <span class="n">PrimeiroElemento</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="n">key</span> <span class="o">:</span> <span class="n">key</span><span class="o">);</span>
+
+    <span class="nd">@override</span>
+    <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">Center</span><span class="o">();</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Agora terminamos de escrever o código mínimo para que possamos criar uma
+aplicação minima.</p>
+
+<p>Vamos disparar um dispositivo virtual pelo Android-Studio ADV Manager, e então, 
+podemos tentar executar com o seguinte código em nosso terminal com flutter</p>
+
+<hr />
+
+<p>flutter run</p>
+
+<hr />
+
+<p class="aviso">Lembre-se que você deve estar na raiz da pasta do seu projeto para esse comando
+funcionar.</p>
+
+<p>Se foi feito rudo certo, não teremos erros em nosso terminal:</p>
+
+<p><img src="img/06_terminal.png" alt="Terminal rodando a aplicação" /></p>
+
+<p>E teremos uma LINDA tela preta em nosso emulador.</p>
+
+<p><img src="img/06_black.png" alt="Emulador com código mínimo" /></p>
+
+<p>Não se desespere, está certo, a questão é que nosso widget <code class="highlighter-rouge">PrimeiroElemento</code>
+tem apenas um elemento <code class="highlighter-rouge">Center</code> que irá centralizar um outro elementos, em seu
+centro vertical e horizontal, mas não temos esse outro elemento no momento.</p>
+
+<p>Vamos adicionar um texto para deixar as coisas <em>um pouco</em> mais interessantes:</p>
+
+<div data-filename="main.dart" class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="s">"package:flutter/widgets.dart"</span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">){</span>
+    <span class="n">runApp</span><span class="o">(</span><span class="n">PrimeiroElemento</span><span class="o">());</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">PrimeiroElementos</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span><span class="o">{</span>
+    <span class="c1">//Construtor</span>
+    <span class="n">PrimeiroElemento</span><span class="o">({</span><span class="n">Key</span><span class="o">?</span> <span class="n">key</span><span class="o">})</span> <span class="o">:</span> <span class="k">super</span><span class="o">(</span><span class="n">key</span> <span class="o">:</span> <span class="n">key</span><span class="o">);</span>
+
+    <span class="nd">@override</span>
+    <span class="n">Widget</span> <span class="n">build</span><span class="o">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="o">){</span>
+        <span class="kd">var</span> <span class="n">texto</span> <span class="o">=</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Hello stranger...."</span><span class="o">,</span> <span class="nl">textDirection:</span> <span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">Center</span><span class="o">(</span><span class="nl">child:</span> <span class="n">texto</span><span class="o">);</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Agora inserimos um elemento de texto a nossa aplicação, e o definimos como filho
+do Center que estávamos usando antes.</p>
+
+<p>No terminal que estamos com o flutter run rodando, pressione r minusculo, para
+atualizar a sua aplicação.</p>
+
+<p><img src="img/06_texto.png" alt="Emulador e codigo com o texto" /></p>
+
+<p>Na próxima aula, iremos ver com calma os widgets mais básicos do flutter.</p>
+
+
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>
+
+        <footer>
+	<p>
+	</p>
+</footer>
+
+    </body>
+</html>

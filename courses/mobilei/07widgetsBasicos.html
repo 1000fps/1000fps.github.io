@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/monokai.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+    integrity="sha512-vIgFb4o1CL8iMGoIF7cYiEVFrel13k/BkTGvs0hGfVnlbV6XjAA0M0oEHdWqGdAVRTDID3vIZPOHmKdrMAUChA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>
+    Widgets Básicos
+</title>
+</head>
+
+    </head>
+    <body
+        
+            class="closed"
+        
+        >
+        <header>
+    <ul>
+        
+        <li>
+            <button id="courseNav__toggle">
+                <i class="fa fa-bars">&#9776;</i>
+            </button>
+        </li>
+        
+        <li>
+            <a href="/index.html" class=link__bolder>
+                1000FPS | Edu
+            </a>
+        </li>
+<!--        <li>
+            <a href="/posts/index.html">
+                Posts
+            </a>
+</li>-->
+        <li>
+            <a href="#" onClick="toggleCourseMenu()">
+                Cursos
+            </a>
+            <ul class="courses" style="display:none;">
+            
+
+            
+            
+            <li>
+                <a href="/mobilei.html">
+                    Mobile I
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pea.html">
+                    PeA
+                </a>
+            </li>
+        
+            <ul> 
+        </li>
+    </ul>
+</header>
+
+<script type="text/javascript">
+    let xOffset;
+    let yOffset;
+
+    function calculateOffset(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let previousState = menu.style.display;
+        menu.style.display = "block";
+        let menubbox = menu.getBoundingClientRect();
+        
+        xOffset = -menubbox.x;
+        yOffset = - (menubbox.bottom - menubbox.y) - 50;
+        menu.style.display = previousState;
+    }
+
+    calculateOffset()
+
+    function positionMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        xoffset = 0;
+        yoffset = 0;
+        if(window.innerWidth <= 700){
+            xoffset = xOffset;
+            yoffset = yOffset;
+        }
+        menu.style.transform = `translate(${xoffset}px, ${yoffset}px)`;
+    }
+
+    function toggleCourseMenu(){
+        let menu = document.getElementsByClassName("courses")[0];
+        let computedStyle = getComputedStyle(menu).display
+        if(computedStyle == "none"){
+            menu.style.display = "block";
+            positionMenu();
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+</script>
+
+        <nav id="courseNav" class="closed">
+    <div  class="closed">
+        <span class="mdi mdi-chevron-right-circle-outline closed"></span>
+    </div>
+    <div class="wrapper">
+    <h1 class="courseNav__name">
+        Mobile I
+    </h1>
+    <ol>
+    <ul class="courseNav__links">
+        
+        
+        
+        
+        <li> <span class="mdi mdi-home"></span> <a href="/mobilei.html"> Index </a></li>
+
+
+
+
+
+        
+        <li class="mission">
+            <span class="mdi mdi-rocket-launch"></span>
+            <a href="#">Aulas</a>
+
+            
+
+            <div class="mission__content">
+                <ul>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Dart
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart01.html">Variáveis 1</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart02.html">Ramificação de Código</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart03.html">Loops</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/revisaoDart04.html">Orientação a Objetos</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="classToggle">
+                        <span class="mdi mdi-arrow-right-drop-circle closed"></span>
+                        Flutter
+                        <ul class="classContent closed">
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/instalaflutter.html">Instalação</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/06primeirosPassos.html">Primeiro projeto minimo</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/07widgetsBasicos.html">Widgets Básicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/07widgetsbasicos.html">Widgets Básicos</a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <span class="mdi mdi-file"></span>
+                                <a href="/courses/mobilei/08Atividade.html">MaterialApp & Scaffold Basico</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+<div class="lectureContent">
+    <h1>Widgets Básicos</h1>
+    <h3>Mobile I | Flutter</h3>
+    <hr>
+    <h1 id="widgets-básicos">Widgets básicos.</h1>
+
+<p>Agora que já sabemos criar nossa clase base para uma aplicação flutter, vamos
+ver os elementos básicos que iremos usar muito ao longo de nossa trajetorioa com
+o flutter.</p>
+
+<h2 id="texto-text-widget">Texto (<em>Text Widget</em>)</h2>
+
+<p>Claramente será bastante comum apresentarmos texto para o usuário, e para isso
+utilizamos este widget.</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Text</span><span class="o">(</span><span class="s">"Meu texto"</span><span class="o">,</span> <span class="n">textDirection</span> <span class="o">:</span> <span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>O código acima é a forma mais “crua” de se criar um texto, e o colocando como
+filho (child) de um containter ele irá ficar como na imagem</p>
+
+<p><img src="img/textWidget01.png" alt="" /></p>
+
+<p>Mas esse elemento tem diversas opções para que possamos deixar as coisas mais
+interessantes.</p>
+
+<h3 id="overflow">Overflow</h3>
+
+<p>Utilizamos essa opção quando queremos indicar o que deve acontecer se um texto
+for muito grande para seu espaço:</p>
+
+<p><code class="highlighter-rouge">TextOverflow.clip</code></p>
+
+<p><img src="img/textWidget02.png" alt="" /></p>
+
+<p>Essa opção corta o texto que não cabe no seu espaço.</p>
+
+<p><code class="highlighter-rouge">TextOverflow.elipsis</code></p>
+
+<p><img src="img/textWidget03.png" alt="" /></p>
+
+<p>Essa opção coloca o sinal de reticências (…) depois da quebra do texto.</p>
+
+<p><code class="highlighter-rouge">TextOverflow.fade</code></p>
+
+<p><img src="img/textWidget04.png" alt="" /></p>
+
+<p>Essa opção faz uma transição para o texto ir ficando transparente</p>
+
+<p><code class="highlighter-rouge">TextOverflow.visible</code></p>
+
+<p><img src="img/textWidget05.png" alt="" /></p>
+
+<p>Finalmente, esta mantem o texto sendo mostrado mesmo que fora de seu espaço.</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Text</span><span class="o">(</span><span class="s">"Meu texto"</span><span class="o">,</span> 
+     <span class="nl">textDirection:</span> <span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">,</span>
+     <span class="nl">overflow:</span> <span class="n">TextOverflow</span><span class="o">.</span><span class="na">ellipsis</span>
+     <span class="o">);</span>
+</code></pre></div></div>
+
+<p class="dica">Percebeu que em algumas oções o texto “quebrou linha” antes de aplicar o
+overflow? podemos utilizar a opção <code class="highlighter-rouge">maxLines</code> para definir um número maximo de
+linhas que queremos que isso aconteça.</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Text</span><span class="o">(</span><span class="s">"Meu texto"</span><span class="o">,</span>
+     <span class="nl">textDirection:</span> <span class="n">TextDirecrion</span><span class="o">.</span><span class="na">ltr</span><span class="o">,</span>
+     <span class="nl">overflow:</span> <span class="n">TextOverdlow</span><span class="o">.</span><span class="na">ellipsis</span><span class="o">,</span>
+     <span class="nl">maxLines:</span> <span class="mi">1</span>
+     <span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="textalign">TextAlign</h3>
+
+<p>Ess opção cuida de como o texto ficará alinhado horizontalmente</p>
+
+<p><code class="highlighter-rouge">TextAlign.center</code>   <code class="highlighter-rouge">TextAlign.end</code>   <code class="highlighter-rouge">TextAlign.justify</code></p>
+
+<p><code class="highlighter-rouge">TextAlign.left</code>   <code class="highlighter-rouge">TextAlign.rigt</code>   <code class="highlighter-rouge">TextAlign.start</code></p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Text</span><span class="o">(</span><span class="s">"Meu texto"</span><span class="o">,</span>
+     <span class="nl">textDirection:</span> <span class="n">TextDirecrion</span><span class="o">.</span><span class="na">ltr</span><span class="o">,</span>
+     <span class="nl">overflow:</span> <span class="n">TextOverdlow</span><span class="o">.</span><span class="na">ellipsis</span><span class="o">,</span>
+     <span class="nl">maxLines:</span> <span class="mi">1</span><span class="o">,</span>
+     <span class="nl">textAlign:</span> <span class="n">TextAlign</span><span class="o">.</span><span class="na">center</span>
+     <span class="o">);</span>
+</code></pre></div></div>
+
+<h1 id="center">Center</h1>
+
+<p>Este widget é utilizado para centralizar outros componentes, que serão seus
+“filhos” (child)</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="n">OutroWidget</span> <span class="o">=</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Outro Widget"</span><span class="o">);</span> <span class="c1">//Pode ser QUALQUER outro widget</span>
+<span class="n">Center</span><span class="o">(</span><span class="nl">child:</span> <span class="n">OutroWidget</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><img src="img/centerWidget01.png" alt="" /></p>
+
+<h1 id="image">Image</h1>
+
+<p>Esse elemento mostra uma imagem em seu app, neste momento vamos apenas usar
+imagens que estejam carregadas na internet, mas a frente vamos aprender inserir
+imagem locais em nossa aplicação.</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Image</span><span class="o">.</span><span class="na">network</span><span class="o">(</span><span class="s">"https://placekitten.com/g/200/300"</span><span class="o">);</span>
+</code></pre></div></div>
+<p><img src="img/image.png" alt="" /></p>
+
+<h1 id="container">Container</h1>
+
+<p>Esse é um dos elementos básicos que começamos a trabalhar com posicionamento,
+“pintura” e tamanho. Ele tem um construtor que pode receber diversos parametros
+mas vamos começar pelos mais básicos.</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Container</span><span class="o">(</span><span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">red</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Acima criamos um container apenas com a cor vermelha</p>
+
+<p><img src="img/containerWidget01.png" alt="" /></p>
+
+<p>Como de prache, podemos colocar um filho nele</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Container</span><span class="o">(</span><span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">red</span><span class="o">,</span>
+          <span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Widget Filho"</span><span class="o">,</span> <span class="nl">textDirection:</span><span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">));</span>
+</code></pre></div></div>
+
+<p>Podemos também definir altura e largura do nosso container</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Container</span><span class="o">(</span><span class="nl">color:</span> <span class="n">Colors</span><span class="o">.</span><span class="na">red</span><span class="o">,</span>
+          <span class="nl">child:</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Widget Filho"</span><span class="o">,</span> <span class="nl">textDirection:</span><span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">)</span>
+          <span class="nl">width:</span> <span class="mf">50.0</span><span class="o">,</span>
+          <span class="nl">height:</span> <span class="mf">100.0</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><img src="img/container02.png" alt="" /></p>
+
+<p>Para verificar o exemplo acima o container não pode ser o elemento raiz da nossa
+aplicação!</p>
+
+<h1 id="column-e-row">Column e Row</h1>
+
+<p>Esses widgets organizam diversos filhos dentro da tela, em colunas (column) ou
+linhas (row)</p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="n">Widget1</span> <span class="o">=</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Widget 1"</span><span class="o">,</span> <span class="nl">textDirection:</span> <span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">);</span>
+<span class="kd">var</span> <span class="n">Widget2</span> <span class="o">=</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Widget 2"</span><span class="o">,</span> <span class="nl">textDirection:</span> <span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">);</span>
+<span class="n">Column</span><span class="o">(</span><span class="nl">children:</span> 
+        <span class="n">Widget</span><span class="o">&gt;[</span>
+           <span class="n">Widget1</span><span class="o">,</span>
+           <span class="n">Widget2</span><span class="o">,</span>
+        <span class="o">]);</span>
+</code></pre></div></div>
+
+<p>Criamos uma coluna com dois elementos</p>
+
+<p><img src="img/column.png" alt="" /></p>
+
+<div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="n">Widget1</span> <span class="o">=</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Widget 1"</span><span class="o">,</span> <span class="nl">textDirection:</span> <span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">);</span>
+<span class="kd">var</span> <span class="n">Widget2</span> <span class="o">=</span> <span class="n">Text</span><span class="o">(</span><span class="s">"Widget 2"</span><span class="o">,</span> <span class="nl">textDirection:</span> <span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">);</span>
+<span class="n">Row</span><span class="o">(</span><span class="nl">children:</span> 
+        <span class="n">Widget</span><span class="o">&gt;[</span>
+           <span class="n">Widget1</span><span class="o">,</span>
+           <span class="n">Widget2</span><span class="o">,</span>
+        <span class="o">],</span>
+        <span class="nl">textDirection:</span> <span class="n">TextDirection</span><span class="o">.</span><span class="na">ltr</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Criamos uma linha com 2 elementos</p>
+
+<p><img src="img/row.png" alt="" /></p>
+
+<h1 id="desafio">Desafio!</h1>
+
+<p>Utilizando os widgets que vimos hoje crie um aplicativo que tenha o seguinte
+layout:</p>
+
+<p><img src="img/layout.png" alt="" /></p>
+
+</div>
+
+
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+"use strict";
+var toggleButton = document.getElementById("courseNav__toggle");
+toggleButton.addEventListener("click", toggleNav);
+
+var toggleClassList = document.getElementsByClassName("classToggle");
+for(var i = 0; i < toggleClassList.length; i++){
+    toggleClassList[i].addEventListener("click", toggleClass);
+}
+
+
+function toggleNav(event){
+    var courseNav = document.getElementById("courseNav");
+    courseNav.classList.toggle("closed");
+    courseNav.classList.toggle("open");
+    var courseNav_toggle = document.getElementById("courseNav__toggle");
+    courseNav_toggle.classList.toggle("closed");
+    courseNav_toggle.classList.toggle("open");
+    var body = document.body;
+    body.classList.toggle("closed");
+    body.classList.toggle("open");
+
+}
+
+
+function toggleClass(event){
+
+    var target = event.target;
+    
+    if(target.tagName != "SPAN"){ // Clicked outside the icon
+        target = target.querySelector("span");
+    }
+    target.classList.toggle("closed");
+    target.classList.toggle("open");
+    var classContent = target.parentElement.querySelector(".classContent");
+    classContent.classList.toggle("closed");
+    classContent.classList.toggle("open");
+    
+}
+ 
+</script>
+
+        <footer>
+	<p>
+	</p>
+</footer>
+
+    </body>
+</html>
