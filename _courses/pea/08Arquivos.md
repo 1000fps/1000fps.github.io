@@ -1,6 +1,6 @@
 ---
 layout: classContent
-title: "08 - Listas"
+title: "08 - Arquivos"
 course: "PeA"
 sectionNo: 0
 section: "Aulas"
